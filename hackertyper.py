@@ -20,6 +20,10 @@ class HackerTyper(sublime_plugin.EventListener):
     hacker_buffer = ""
 
     def on_activated(self, view):
+        # Don't check for solution files if the plugin is disabled
+        if hacker_enabled is False:
+            return
+
         # Check if the current file has a solution
         filename = view.file_name()
         if filename is None:
@@ -49,6 +53,7 @@ class HackerTyper(sublime_plugin.EventListener):
         # Fetch correct part of the buffer
         bufSize = view.size()
 
+        # Fall back if we're outrunning the original solution
         if bufSize > len(self.hacker_buffer):
             return
 
