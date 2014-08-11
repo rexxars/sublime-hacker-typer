@@ -9,6 +9,10 @@ Basically, the plugin (when enabled) looks for a file with the same name as the 
 
 When it finds this file, it treats it as the "solution" for the file. Whenever you type something, it will try to read the same number of characters from the solution file and replace whatever you typed.
 
+## Why!?
+
+Partly because it was fun. Partly because it can be useful when "live coding" something. Usually, when you're doing a talk and you're a little busy trying to make sense to your audience, you tend to do a lot of typos and silly mistakes. I still think it's a great way to engage the audience - but I'd rather skip all the mistakes ;-)
+
 ## Usage
 
 1. Install the package through [Sublime Package Control](https://sublime.wbond.net/). Search for HackerTyper.
