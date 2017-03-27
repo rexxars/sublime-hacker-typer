@@ -1,9 +1,12 @@
 import os.path
-import sublime, sublime_plugin
+import sublime
+import sublime_plugin
 
 hacker_enabled = False
 
+
 class HackerTyperCommand(sublime_plugin.TextCommand):
+
     def run(self, edit, enable=False, content=False):
         global hacker_enabled
         hacker_enabled = enable
@@ -42,7 +45,7 @@ class HackerTyper(sublime_plugin.EventListener):
             sublime.status_message("")
 
         # Read the entire solution text
-        self.hacker_buffer = open(solution).read()
+        self.hacker_buffer = open(solution, encoding='utf-8').read()
 
     def on_modified_async(self, view):
         global hacker_enabled
@@ -57,6 +60,6 @@ class HackerTyper(sublime_plugin.EventListener):
         if bufSize > len(self.hacker_buffer):
             return
 
-        newBuf  = self.hacker_buffer[:bufSize]
+        newBuf = self.hacker_buffer[:bufSize]
 
-        view.run_command("hacker_typer", { "enable": True, "content": newBuf });
+        view.run_command("hacker_typer", {"enable": True, "content": newBuf})
