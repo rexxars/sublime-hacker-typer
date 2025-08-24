@@ -1,5 +1,8 @@
 # sublime-hacker-typer
 
+> [!NOTE]
+> Archived. No longer being maintained. 
+
 Pretend you're an expert hacker and can type flawlessly.
 Inspired by http://hackertyper.com/
 
